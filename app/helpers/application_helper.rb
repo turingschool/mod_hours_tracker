@@ -11,4 +11,9 @@ module ApplicationHelper
             ["Combined Mod 4", "casimircreative.com_c1s3vspg5v09vh5cnnh88dn2nc@group.calendar.google.com"]
           ]
     end 
+
+    def find_mod_from_input(id)
+        mod_array = mod_calendars.find {|array| array[1] == id}
+        mod_array[0]
+    end 
 end

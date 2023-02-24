@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+ tr:nth-child(even) {background-color: #f2f2f2;}
+ 
+ th {
+    background-color: #79b1f1;
+    color: white;
+  }

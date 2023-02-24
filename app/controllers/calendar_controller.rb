@@ -1,8 +1,11 @@
 require 'icalendar'
-require 'open-uri'
+# require 'open-uri'
 
 class CalendarController < ApplicationController 
+    include ApplicationHelper
+
     def hours_report
+        @mod = find_mod_from_input(params[:calendar_id])
         a = "https://www.google.com/calendar/ical/#{params[:calendar_id]}/public/basic.ics"
         ical = open(a).read
         calendar = Icalendar.parse(ical).first
