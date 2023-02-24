@@ -1,5 +1,5 @@
 require 'icalendar'
-# require 'open-uri'
+require 'open-uri'
 
 class CalendarController < ApplicationController 
     include ApplicationHelper
