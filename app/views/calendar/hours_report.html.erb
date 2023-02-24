@@ -1,0 +1,24 @@
+<% if @hours_breakdown %>
+    <br><br>
+    Lesson Time: <%= @hours_breakdown[:lesson_time]%>
+    Lab Time: <%= @hours_breakdown[:lab_time]%>
+<% end %>
+
+<table id='student-attendances' class="sortable">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.each do |e| %>
+      <tr>
+        <td><%= e.dtstart.in_time_zone('Mountain Time (US & Canada)').strftime("%B %d, %Y")%></td>
+        <td><%= e.dtstart.in_time_zone('Mountain Time (US & Canada)').strftime("%I:%M %p")%></td>
+        <td><%= e.summary %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

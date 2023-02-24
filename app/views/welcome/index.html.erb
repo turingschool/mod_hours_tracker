@@ -1,0 +1,16 @@
+<%= form_with url: hours_report_path, method: :get, local: true do |f| %>
+  <p class='s-p'>
+    <%= f.label 'Select Mod: ' %>
+    <%= f.select :calendar_id, options_for_select(mod_calendars), {class: "select-field"}%>
+  </p>
+  <p class='s-p'>
+    <%= f.label 'From: ' %>
+    <%= f.date_field :start_date %>
+  </p>
+  <p class='s-p'>
+    <%= f.label 'To: ' %>
+    <%= f.date_field :end_date %>
+  </p>
+  <%= f.submit 'Calculate Hours', class: 's-button', data: {confirm: 'Are you sure you want to update this student?'} %>
+<% end %>
+
